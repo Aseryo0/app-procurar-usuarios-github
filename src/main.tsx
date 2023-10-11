@@ -1,9 +1,9 @@
 import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { MainPage } from "./pages/Main/index.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Repositories } from "./pages/RepositoriesPage/index.tsx";
+import { MainPage } from "./pages/Main";
+import { RepositoriesPage } from "./pages/RepositoriesPage";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/repositories",
-    element: <Repositories />,
+    element: <RepositoriesPage />,
   },
 ]);
 

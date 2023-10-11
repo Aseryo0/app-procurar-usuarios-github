@@ -25,21 +25,15 @@ export const Selector = styled.button`
   border: none;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  transition: background 0.3s, transform 0.3s;
   padding: 0 1rem;
   color: ${(props) => props.color};
-  &:hover,
-  &.selected {
+  &:hover {
     background-color: ${(props) => props.color || "#ecf0f1"};
     color: #fff;
     transform: translateX(5px) scale() (1.02);
   }
   @media (max-width: 768px) {
     border-radius: 20px;
-    &:hover,
-    &.selected {
-      transform: translateX(0) scale() (1.02);
-    }
   }
 `;
 export const Clear = styled.button`

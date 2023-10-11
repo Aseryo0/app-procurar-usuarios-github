@@ -16,7 +16,7 @@ export const MainPage = () => {
             value={user}
             onChange={(e) => setUser(e.target.value)}
           />
-          <Link to={`/${user}/repositories`}>
+          <Link to={"http://localhost:5173/repositories"}>
             <AiOutlineSearch size={45} color={"fff"} />
           </Link>
         </SearchContainer>
