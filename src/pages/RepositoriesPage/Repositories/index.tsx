@@ -5,11 +5,6 @@ export const Repositories = () => {
   return (
     <RepositoriesContainer>
       <Repository />
-      <Repository />
-      <Repository />
-      <Repository />
-      <Repository />
-      <Repository />
     </RepositoriesContainer>
   );
 };

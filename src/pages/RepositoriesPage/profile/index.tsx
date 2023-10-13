@@ -6,7 +6,7 @@ export const UserProfile = (user: IUserProps) => {
   return (
     <ProfileContainer>
       <Header>
-        <UserImage src={user.avatar_url} />
+        <UserImage src={user.avatar_url} alt="imagem de perfil do usuario" />
         <h1>{user.userName}</h1>
         <h2>{user.userName}</h2>
       </Header>

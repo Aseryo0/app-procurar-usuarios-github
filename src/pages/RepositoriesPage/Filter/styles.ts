@@ -27,9 +27,10 @@ export const Selector = styled.button`
   border-bottom-right-radius: 20px;
   padding: 0 1rem;
   color: ${(props) => props.color};
-  &:hover {
+  &:hover,
+  &.selected {
     background-color: ${(props) => props.color || "#ecf0f1"};
-    color: #fff;
+    color: ${(props) => (props.color ? "#000" : "#fff")};
     transform: translateX(5px) scale() (1.02);
   }
   @media (max-width: 768px) {

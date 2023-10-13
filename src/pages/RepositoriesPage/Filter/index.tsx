@@ -1,36 +1,15 @@
+import { Langues } from "../../../types/getLanguagesProps";
 import { Clear, FilterContainer, Selector } from "./styles";
-
-interface LangsProps {
-  name: string;
-  count: number;
-  color: string;
+interface FilterProps {
+  languages: Langues[];
 }
-
-export const Filter = () => {
-  const langs: Array<LangsProps> = [
-    {
-      name: "JavaScript",
-      count: 5,
-      color: "#f1c40f",
-    },
-    {
-      name: "Shell",
-      count: 4,
-      color: "#95a5a6",
-    },
-    {
-      name: "PHP",
-      count: 5,
-      color: "#3498db",
-    },
-  ];
-
+export const Filter = ({ languages }: FilterProps) => {
   return (
     <FilterContainer>
-      {langs.map((lang) => (
-        <Selector key={lang.name} color={lang.color}>
-          <span>{lang.name}</span>
-          <span>{lang.count}</span>
+      {languages.map((item) => (
+        <Selector key={item.name} color={item.color}>
+          <span>{item.name}</span>
+          <span>{item.count}</span>
         </Selector>
       ))}
       <Clear>Limpar</Clear>
