@@ -1,4 +1,4 @@
-export const langColors = {
+export const langColors: any = {
   javascript: "#f1c40f",
   typescript: "#2980b9",
   python: "#2ecc71",
@@ -6,7 +6,7 @@ export const langColors = {
   css: "#9b59b6",
   scss: "#9b59b6",
   vue: "#1abc9c",
-  php: "#34998db",
+  php: "#3498db",
   ruby: "#e74c3c",
   c: "#16a085",
   "c#": "27ae60",
