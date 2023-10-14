@@ -1,11 +1,15 @@
+import { RepositoriesContainer, RepositoriesSection, SideBar } from "./styles";
 import { Filter } from "./Filter";
 import { Repositories } from "./Repositories";
 import { UserProfile } from "./Profile";
-import { RepositoriesContainer, RepositoriesSection, SideBar } from "./styles";
 import { IUserProps } from "../../types/getUserProps";
 import { useRepositoryData } from "./useRepositoryData";
+import { useState } from "react";
 
 export const RepositoriesPage = () => {
+  const [currentLanguage, setCurrentLanguage] = useState("");
+
+  const { status, repositories } = useRepositoryData();
   const usuario: IUserProps = {
     userName: "André",
     avatar_url: "https://avatars.githubusercontent.com/u/101354501?v=4",
@@ -15,15 +19,21 @@ export const RepositoriesPage = () => {
     blog: "",
     location: "Arcoverde, PE",
   };
-  const { status } = useRepositoryData();
   return (
     <RepositoriesContainer>
       <SideBar>
         <UserProfile {...usuario} />
-        <Filter languages={status} />
+        <Filter
+          languages={status}
+          currentLanguage={currentLanguage}
+          onClick={async (item: string) => setCurrentLanguage(item)}
+        />
       </SideBar>
       <RepositoriesSection>
-        <Repositories />
+        <Repositories
+          repositories={repositories}
+          currentLanguage={currentLanguage}
+        />
       </RepositoriesSection>
     </RepositoriesContainer>
   );

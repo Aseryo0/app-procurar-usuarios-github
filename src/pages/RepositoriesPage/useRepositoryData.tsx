@@ -3,46 +3,46 @@ import { langColors } from "../../services/config.ts";
 export const useRepositoryData = () => {
   const repositories = [
     {
+      id: 1,
       name: "repo 1",
       description: "Descrição",
       URL: "github.com",
       language: "JavaScript",
     },
     {
+      id: 2,
       name: "repo 2",
       description: "Descrição",
       URL: "github.com",
       language: "JavaScript",
     },
     {
+      id: 3,
       name: "repo 3",
       description: "Descrição",
       URL: "github.com",
       language: "TypeScript",
     },
     {
+      id: 4,
       name: "repo 4",
       description: "Descrição",
       URL: "github.com",
       language: "TypeScript",
     },
     {
+      id: 5,
       name: "repo 5",
       description: "Descrição",
       URL: "github.com",
       language: "Ruby",
     },
     {
+      id: 6,
       name: "repo 6",
       description: "Descrição",
       URL: "github.com",
       language: "Ruby",
-    },
-    {
-      name: "repo 7",
-      description: "Descrição",
-      URL: "github.com",
-      language: "PHP",
     },
   ];
 
@@ -63,5 +63,5 @@ export const useRepositoryData = () => {
     }))
     .sort((a, b) => b.count - a.count);
 
-  return { status };
+  return { status, repositories };
 };
