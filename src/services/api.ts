@@ -1,7 +1,7 @@
 import { default as axios } from "axios";
 
-export const getUser = async (login: string) =>
-  axios.get(`http://localhost:3000/users/${login}`);
+export const getUser = async (login: any) =>
+  axios.get(`https://api.github.com/users/${login}`);
 
-export const getRepos = async (login: string) =>
-  axios.get(`http://localhost:3000/users/${login}/repos`);
+export const getRepos = async (login: any) =>
+  axios.get(`https://api.github.com/users/${login}/repos`);

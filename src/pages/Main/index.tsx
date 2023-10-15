@@ -4,7 +4,7 @@ import { AiOutlineSearch, AiOutlineGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export const MainPage = () => {
-  const [user, setUser] = useState("");
+  const [login, setLogin] = useState("");
   return (
     <Main>
       <div>
@@ -13,10 +13,10 @@ export const MainPage = () => {
         <SearchContainer>
           <input
             placeholder="Digite um Usuário"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
           />
-          <Link to={"http://localhost:5173/repositories"}>
+          <Link to={`/${login}/repos`}>
             <AiOutlineSearch size={45} color={"fff"} />
           </Link>
         </SearchContainer>

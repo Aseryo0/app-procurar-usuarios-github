@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: <MainPage />,
   },
   {
-    path: "/repositories",
+    path: "/:login/repos",
     element: <RepositoriesPage />,
   },
 ]);
