@@ -1,5 +1,10 @@
 import styled from "styled-components";
-
+export const Loading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+`;
 export const RepositoriesContainer = styled.div`
   display: flex;
   min-height: 100vh;

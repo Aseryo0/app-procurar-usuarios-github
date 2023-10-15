@@ -1,6 +1,7 @@
 export interface IUserProps {
-  userName: string;
   avatar_url: string;
+  login: string;
+  name: string;
   followers: number;
   following: number;
   company: string;

@@ -1,28 +1,43 @@
-import { RepositoriesContainer, RepositoriesSection, SideBar } from "./styles";
+import {
+  Loading,
+  RepositoriesContainer,
+  RepositoriesSection,
+  SideBar,
+} from "./styles";
 import { Filter } from "./Filter";
 import { Repositories } from "./Repositories";
 import { UserProfile } from "./Profile";
-import { IUserProps } from "../../types/getUserProps";
 import { useRepositoryData } from "./useRepositoryData";
-import { useState } from "react";
+import { IUserProps } from "../../types/getUserProps";
+import { useEffect, useState } from "react";
+import { getUser, getRepos } from "../../services/api";
 
 export const RepositoriesPage = () => {
+  const [user, setUser] = useState();
+  const [userRepos, setUserRepos] = useState([]);
   const [currentLanguage, setCurrentLanguage] = useState("");
-
+  const [loading, setLoading] = useState(true);
   const { status, repositories } = useRepositoryData();
-  const usuario: IUserProps = {
-    userName: "André",
-    avatar_url: "https://avatars.githubusercontent.com/u/101354501?v=4",
-    followers: 10,
-    following: 10,
-    company: "@web-intelligence-arcoverde",
-    blog: "",
-    location: "Arcoverde, PE",
-  };
+
+  useEffect(() => {
+    const loadData = async () => {
+      const [userResponse, userRepos] = await Promise.all([
+        getUser("Aseryo0"),
+        getRepos("Aseryo0"),
+      ]);
+      setUser(userResponse.data);
+      setUserRepos(userResponse.data);
+      setLoading(false);
+    };
+    loadData();
+  }, []);
+  if (loading) {
+    return <Loading>Carregando...</Loading>;
+  }
   return (
     <RepositoriesContainer>
       <SideBar>
-        <UserProfile {...usuario} />
+        <UserProfile user={user} />
         <Filter
           languages={status}
           currentLanguage={currentLanguage}
