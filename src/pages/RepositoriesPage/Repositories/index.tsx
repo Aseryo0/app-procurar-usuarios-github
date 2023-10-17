@@ -5,12 +5,12 @@ interface RepoProps {
   currentLanguage: string;
 }
 export const Repositories = ({ repositories, currentLanguage }: RepoProps) => {
+  console.log(repositories);
   return (
     <RepositoriesContainer>
       {repositories
         .filter(
-          (item: any) =>
-            currentLanguage === "" || item.language === currentLanguage
+          (item: any) => !currentLanguage || item.language === currentLanguage
         )
         .map((repository: any) => (
           <Repository key={repository.id} repository={repository} />

@@ -8,3 +8,13 @@ export interface IUserProps {
   blog: string;
   location: string;
 }
+export const initialUser: IUserProps = {
+  avatar_url: "",
+  login: "",
+  name: "",
+  followers: 0,
+  following: 0,
+  company: "",
+  blog: "",
+  location: "",
+};

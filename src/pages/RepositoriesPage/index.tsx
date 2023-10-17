@@ -11,11 +11,11 @@ import { useRepositoryData } from "./useRepositoryData";
 import { useEffect, useState } from "react";
 import { getUser, getRepos } from "../../services/api";
 import { useParams } from "react-router-dom";
+import { IUserProps, initialUser } from "../../types/getUserProps";
 
 export const RepositoriesPage = () => {
   const { login } = useParams();
-
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<IUserProps>(initialUser);
   const [userRepos, setUserRepos] = useState([]);
   const [currentLanguage, setCurrentLanguage] = useState("");
   const [loading, setLoading] = useState(true);
@@ -44,6 +44,7 @@ export const RepositoriesPage = () => {
           languages={status}
           currentLanguage={currentLanguage}
           onClick={async (item: string) => setCurrentLanguage(item)}
+          clearFilter={async () => setCurrentLanguage("")}
         />
       </SideBar>
       <RepositoriesSection>

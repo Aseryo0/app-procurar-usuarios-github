@@ -9,6 +9,7 @@ export const Main = styled.main`
   padding: 4%;
   min-height: 100vh;
   h1 {
+    padding: 20px 0;
     font-size: 2.2rem;
   }
 `;
