@@ -1,1 +1,3 @@
-app de busca de usúarios do git hub que visa mostrar seus dados de perfil e seus repositórios.
+projeto de buscas de perfil de usuarios github feito nas tecnologias typescipt e react.js.
+
+como iniciar projeto: "npm run dev"
